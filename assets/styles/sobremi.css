@@ -1,0 +1,128 @@
+
+
+
+main {
+  text-align: center;      /* Centra el texto */
+  margin-left: 20px;       /* Margen izquierdo */
+  margin-right: 20px;      /* Margen derecho */
+  /* O usa margin: 0 20px; para ambos lados */
+}
+
+:root{
+    --lighting-color: #0089b7; /*Color principal claro (azul turquesa)*/
+    --dark-color: #003d62; /*Color secundario oscuro (azul marino)*/
+    --darker-color: #003251; /*variante aun mas oscura del color marino*/
+    --color: #fff700; /*color de acento*/
+    --color-amarillo-claro: #f2de2c39;
+    --color-favorito: #40E0D0;
+}
+
+/*Aplica a todos los elementos*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*Incluye borde y padding en el ancho y alto total*/
+    font-family: 'Outfit', sans-serif;
+}
+
+/*Ajuste base del tamaño fuente html*/
+html{
+    font-size: 62.5%; /*Hace que 1rem = 10px (62.5% de 16px)*/
+}
+
+/*Estilos comunes a body y html*/
+body, html {
+    font-weight: 300; /*Grosor de fuente ligero*/
+    font-size: medium;
+    line-height: 1.4; /*Interlineado para mejorar la lectura*/
+    scroll-behavior: smooth; /*Scroll suave para enlaces internos*/
+    color: white; /*color de texto por defecto blanco*/
+    background: linear-gradient(rgb(0, 0, 0),rgb(14, 47, 44),rgb(12, 50, 46),#000);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 1.4rem; /*Tamaño de texto base: 14px*/
+    background-color: black;
+    color: linear-gradiant(white, #003d62);
+}
+
+/*contenedor centralido*/
+
+.container{
+    max-width: 1300px; /*Ancho maximo del contenedor*/
+    margin: 0 auto; /*Centra horizontalmente*/
+    align-items: center;
+}
+
+/*Estilos para enlaces*/
+a{
+    text-decoration: none; /*Quita subrayado*/
+    color: white; /*Color de enlace blanco*/
+}
+
+/*Estilos para listas*/
+
+ul {
+    list-style: none; /*Quita vieñeta*/
+}
+
+/*Encabezado sticky*/
+header{
+    position: sticky; /*Se queda fijo al hacer el scroll*/
+    top:0; /*Se ancla arriba la ventana*/
+    /*Z-index - Nos asegura que que header siempre estara por encima de cualquier elemento*/
+    z-index: 100; /*Por encima de otros elementos*/
+    background: rgb(0, 0, 0); /**/
+}
+
+/*Espaciado interno y distribucion del nav*/
+nav{
+    display: flex;  /*Flexbox para alinear los elementos*/
+    justify-content: space-between; /*Separa el logo y menu*/
+    align-content: center; /*Centrarlo verticalmente*/
+    padding: 1rem; /*Padding interior de 10px*/
+}
+
+/*Lista horizontal en nav*/
+nav ul{
+    display: flex; /*Flexbox en la Lista*/
+    gap: 1rem; /*Espacio entre item 10px*/
+}
+/*Items del Menu*/
+nav li {
+    font-size: 1.8rem;
+    border-bottom: 0.4rem transparent solid;/*Linea inferior transparente*/
+    transition: 0.3s ease-in-out; /*Transicion suave en hover*/
+}
+/*Hover en items del menu*/
+nav li:hover{
+    border-bottom: 0.4rem rgb(255, 182, 35) solid;/*Linea inferior amarilla*/
+}
+.logo{
+    font-size: 2rem; /* TAMAÑO TEXTO */
+    font-weight: 500; /* FUENTE NEGRITA */
+}
+
+main{
+  width: 80vw;        /* Ocupa el 80% del ancho de la ventana */
+  min-height: 60vh;   /* Al menos el 60% de la altura de la ventana */
+  margin: 0 auto; 
+  text-align: center;
+  margin-block: center;
+  font-size: 1rem; ;
+}
+
+h2{
+    color:#40E0D0;
+}
+
+footer{
+    color:#94f6fb;
+    font-size: 0.8rem;
+    text-align: center;
+    
+}  
+

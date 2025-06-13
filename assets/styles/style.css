@@ -1,0 +1,382 @@
+:root{
+    --lighting-color: #0089b7; /*Color principal claro (azul turquesa)*/
+    --dark-color: #003d62; /*Color secundario oscuro (azul marino)*/
+    --darker-color: #003251; /*variante aun mas oscura del color marino*/
+    --color: #fff700; /*color de acento*/
+    --color-amarillo-claro: #f2de2c39;
+    --color-favorito: #40E0D0;
+}
+
+/*Aplica a todos los elementos*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*Incluye borde y padding en el ancho y alto total*/
+    font-family: 'Outfit', sans-serif;
+}
+
+/*Ajuste base del tamaño fuente html*/
+html{
+    font-size: 62.5%; /*Hace que 1rem = 10px (62.5% de 16px)*/
+}
+
+/*Estilos comunes a body y html*/
+body, html {
+    font-weight: 300; /*Grosor de fuente ligero*/
+    line-height: 1.4; /*Interlineado para mejorar la lectura*/
+    scroll-behavior: smooth; /*Scroll suave para enlaces internos*/
+    color: white; /*color de texto por defecto blanco*/
+    background: linear-gradient(rgb(0, 0, 0),rgb(31, 104, 97),rgb(28, 109, 101),#000);
+}
+
+body{
+    font-size: 1.4rem; /*Tamaño de texto base: 14px*/
+    background-color: black;
+    color: #94f6fb;
+}
+
+/*contenedor centralido*/
+
+.container{
+    max-width: 1300px; /*Ancho maximo del contenedor*/
+    margin: 0 auto; /*Centra horizontalmente*/
+    align-items: center;
+}
+
+/*Estilos para enlaces*/
+a{
+    text-decoration: none; /*Quita subrayado*/
+    color: white; /*Color de enlace blanco*/
+}
+
+/*Estilos para listas*/
+
+ul {
+    list-style: none; /*Quita vieñeta*/
+}
+
+/*Encabezado sticky*/
+header{
+    position: sticky; /*Se queda fijo al hacer el scroll*/
+    top:0; /*Se ancla arriba la ventana*/
+    /*Z-index - Nos asegura que que header siempre estara por encima de cualquier elemento*/
+    z-index: 100; /*Por encima de otros elementos*/
+    background: rgb(0, 0, 0); /**/
+}
+
+/*Espaciado interno y distribucion del nav*/
+nav{
+    display: flex;  /*Flexbox para alinear los elementos*/
+    justify-content: space-between; /*Separa el logo y menu*/
+    align-content: center; /*Centrarlo verticalmente*/
+    padding: 1rem; /*Padding interior de 10px*/
+}
+
+/*Lista horizontal en nav*/
+nav ul{
+    display: flex; /*Flexbox en la Lista*/
+    gap: 1rem; /*Espacio entre item 10px*/
+}
+/*Items del Menu*/
+nav li {
+    font-size: 1.8rem;
+    border-bottom: 0.4rem transparent solid;/*Linea inferior transparente*/
+    transition: 0.3s ease-in-out; /*Transicion suave en hover*/
+}
+/*Hover en items del menu*/
+nav li:hover{
+    border-bottom: 0.4rem rgb(255, 182, 35) solid;/*Linea inferior amarilla*/
+}
+.logo{
+    font-size: 2rem; /* TAMAÑO TEXTO */
+    font-weight: 700; /* FUENTE NEGRITA */
+}
+
+/* SECCIÓN hero */
+
+#hero{
+    
+    padding: 4rem 0; /* padding VERTICAL DE 40px */
+    border-bottom: 4px solid rgb(255, 255, 255);
+    max-height: 100vh; /* ALTURA MAXIMA IGUAL AL VIEWPORT */
+}
+
+/* CONTENEDOR INTERNO DE HERO */
+
+#hero .container{
+
+    display: flex; /* FLEXBOX PARA IMAGEN Y TEXTO */
+    justify-content: space-around; /* SEPARACIÓN UNIFORME */
+    align-items: center;
+
+}
+
+/* BLOQUE DEL CONTENIDO DEL hero */
+.hero_content{
+    display: grid; /* GRID PARA CENTRAR FÁCILMENTE */
+    place-items: center; /* CENTRA HORIZONTAL Y VERTICALMENTE */
+}
+
+
+
+/* BLOQUE DE IMAGEN DE hero */
+.hero_image{
+    max-width: 45%; /* ANCHO MAXIMO 45% DEL CONTENEDOR */
+    overflow: hidden; /* OCULTA LO QUE SOBRESALGA */
+}
+
+/* ESTILO DE LA IMAGEN */
+
+.hero_image img{
+    width: 100%;
+    height: auto;
+    display: block; /* ELIMINA ESPACIO INFERIOR TIPICO DE LOS img inline */
+    border-radius: 0.5rem; /* BORDES REDONDEADOS DE 5px */
+    object-fit: cover; /* RECORTA/AJUSTA LA IMAGEN CUBRIENDO EL CONTENEDOR */
+}
+
+/* TITULO PRINCIPAL h1 */
+
+#hero h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* TEXTO "hi" GRANDE */
+.hi_text{
+    font-size: 50px; 
+    color:#40E0D0
+}
+
+/* TEXTO DE NOMBRE */
+.name_text{
+    font-size: 5rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+/* SUBTITULO ANIMADO */
+#hero h2{
+    font-size: 4rem; /* TAMAÑO A 40px */
+    font-weight: bold;
+    overflow: hidden; /* OCULTA EL TEXTO NO ESCRITO */
+    border-right: 0.15rem solid rgb(255, 182, 35);
+    white-space: nowrap; /* EVITA EL SALTO DE LINEA */
+    margin: 0 auto; /* CENTRA HORIZONTALMENTE */
+    animation: typing 5s steps(40,end), blink-caret 0.75s step-end infinite;
+
+}
+
+/* ANIMATION TYPING */
+@keyframes typing{
+    from {width: 0;} /* EMPIEZA CON ANCHO 0 */
+    to { width: 100%; } /* TERMINA MOSTRANDO TEXTO */
+}
+
+/* ANIMACIÓN CARET PARPADEANTE */
+@keyframes blink-caret {
+    from, to {border-color: transparent} /*PARA CREAR EFECTO DE CURSOR DE ESCRITURA*/
+    50%      {border-color: rgb(255, 182, 35);} /* padding INFERIOR DE 40px */
+}
+
+/* PARA CENTRAR LA section DE .project EN EL MAIN, BAJO EL section DE hero */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente las secciones */
+}
+
+.hero {
+  width: 100%; /* O el ancho que desees */
+  /* Otros estilos */
+}
+
+.project {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;     /* Centra el contenido verticalmente si tiene altura */
+  width: 100%;    
+}
+
+#project{
+    
+    padding-bottom: 4rem;
+
+}
+
+#project h2{
+    font-size: 6rem;
+    text-align: center; 
+    padding: 2rem 0;
+}
+
+.project_container{
+    display: grid;  /* COLUMNAS FLUIDAS DE MINIMO 320px */
+    grid-template-columns: repeat(autofit, minmax(320px, 1fr));
+    gap: 2rem; /* ESPACIO ENTRE TARJETAS */
+}
+
+.grid_item{
+    display: grid;
+    place-items: center;
+}
+
+/* ESTILO BASE DE CADA CARD */
+.card{
+    width: 100%; /* ANCHO COMPLETO DENTRO DEL GRID ITEM */
+    max-width: 320px; /* ANCHO MÁXIMO DE 320 px */
+    display: flex; 
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden; /* RECORTA LO QUE SOBRESALGA */
+    transition: 0.2s ease-in-out; /* TRANSICION SUAVE AL HOVER */ 
+    
+}
+
+/* HOVER EN LA IMAGEN CARD */
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card:hover img{
+    transform: scale(1.05); /* ESCALA IMAGEN */
+    opacity: 0.8; /* LIGERA TRANSPARENCIA */
+    transition: 0.3s ease-in-out; /* TRANSICION PROPIA */
+}
+
+.card_content{
+    padding: 2rem; /* PADDING INTERNO DE 20px */
+    position: relative; /* POSICIONAMIENTO PARA TOP */
+    top: -6.5rem; /*SITUA EL BLOQUE SOBRE LA IMAGEN*/
+    margin-bottom: -6.5rem; /* AJUSTA ESPACIO INFERIOR */
+    transition: 0.5s ease-in-out; /*transicion al hover*/
+    transform: translateY(100px);
+}
+
+.card:hover .card_content{
+    background: linear-gradient( rgb(85, 248, 215), rgb(0, 0, 0));
+    color:rgb(255, 255, 255);
+    transform: translateY(0);
+}
+
+/* TITULO DENTRO DE card */
+
+.card_content h3{
+    text-align:start;
+
+}
+
+/* REGLA BASE PARA LAS MINIATURAS */
+
+.card img{
+    width: 100%; /* ANCHO COMPLETO */
+    height: 360px; /* ALTURA FIJA DE 360PX */
+    object-fit: cover; /* RECORTA Y/O AJUSTA PARA CUBRIR TODO EL CONTENEDOR */
+    display: block; /* ELIMINA ESPACIOS EXTRA */
+    aspect-ratio: 3/4; /* RELACION DEL ASPECTO */
+}
+
+/* TITULO DE CONTACTO */
+
+#contact h2{
+    font-size: 6rem;
+    text-align: center;
+    margin: 1rem 0;;
+}
+
+#contact .container{
+    height: 90vh;
+    display:flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.top_contact{
+    max-width: 800px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+
+}
+
+.contact_way{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.contact_way i{
+    font-size: 3rem;
+}
+
+.contact_way h3{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.bottom_contact{
+    max-width: 400px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 3rem;
+}
+
+footer{
+    color:#94f6fb;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+/*AJUSTES PARA DIFERENTES PANTALLAS*/
+
+/* PANTALLAS MAX. 500PX */
+
+@media (max-width: 500px) {
+    html{
+        font-size: 25%; /* REDUCE LA BASE rem A 40% */
+    }
+    #hero .container{
+        flex-direction: column;
+    }
+    #contact.container{
+        height: 50vh;
+    }
+    .card img {
+        height: 220px;
+    }
+}
+
+/* PARA PANTALLAS MAXX. 900PX */
+
+@media (max-width: 999px) {
+    html{
+        font-size: 40%; /* REDUCE LA BASE rem A 40% */
+    }
+    #hero .container{
+        flex-direction: column;
+    }
+    .hero_image{
+        display: grid;
+        place-items: center;
+    }
+    #contact.container{
+        height: 70vh;
+    }
+    .card img {
+        height: 300px;
+    }
+}
+
+
+/* PANTALLAS MAYORES DE 900PX*/
+
+@media (min-width: 1000px) {
+    .top_contact{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem
+    }
+}
